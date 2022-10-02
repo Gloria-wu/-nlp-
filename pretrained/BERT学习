@@ -1,0 +1,26 @@
+BERT预训练
+#导入包
+from transformers import BertTokenizer,BertModel
+#基于词典进行预训练
+tokenizer = BertTokenizer.from_pretrained("bert-base-chinese")
+#将想要进行embedding的文字，与词典进行匹配
+eg1:result_comments_id=tokenizer(result_comments,padding=True,truncation=True,max_length=200,return_tensors='pt')
+eg2:sen_code = tokenizer.encode_plus('这个故事没有终点', "正如星空没有彼岸")
+//{'input_ids': [101, 6821, 702, 3125, 752, 3766, 3300, 5303, 4157, 102, 3633, 1963, 3215, 4958, 3766, 3300, 2516, 2279, 102], 
+'token_type_ids': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}#权重层，后面是padding（学的不明白，之后再看：https://blog.csdn.net/qq_39783265/article/details/106977592）
+
+BERT三个embedding层
+
+
+
+
+LSTM input：
+  input_size ：输入的维度
+  hidden_size：h的维，可自己定义，一般定义多少就要
+  num_layers：堆叠LSTM的层数，默认值为1
+  bias：偏置 ，默认值：True
+  batch_first： 如果是True，则input为(batch, seq, input_size)。默认值为：False（seq_len, batch, input_size）
+  bidirectional ：是否双向传播，默认值为False
+
+LSTM output：
