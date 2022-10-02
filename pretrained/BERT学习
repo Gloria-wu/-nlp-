@@ -12,9 +12,6 @@ eg2:sen_code = tokenizer.encode_plus('这个故事没有终点', "正如星空�
 
 BERT三个embedding层
 
-
-
-
 LSTM input：
   input_size ：输入的维度
   hidden_size：h的维，可自己定义，一般定义多少就要
@@ -24,3 +21,5 @@ LSTM input：
   bidirectional ：是否双向传播，默认值为False
 
 LSTM output：
+
+损失函数：
